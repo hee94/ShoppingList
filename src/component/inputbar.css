@@ -1,0 +1,29 @@
+form {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+input {
+  width: 80%;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.addbtn {
+  width: 19%;
+  background-color: rgb(251, 193, 193);
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.addbtn:hover {
+  background-color: #fff;
+  color: rgb(251, 193, 193);
+}
