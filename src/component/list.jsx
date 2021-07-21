@@ -4,7 +4,6 @@ import Items from './items';
 
 class List extends Component {
     render() {
-        console.log(this.props.lists)
         return (
             <ul>
                {this.props.lists.map(item => <Items key={item.id} item={item}/>)}

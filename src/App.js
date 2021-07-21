@@ -11,11 +11,16 @@ class App extends Component{
       {id:3 , name:'치즈', count :0 },
     ]
   }
+  addList =(name)=>{
+    const shoppingList = [...this.state.shoppingList, {id:Date.now(),name,count: 0}];
+    this.setState({shoppingList})
+    console.log(name)
+  }
   render(){
     return(
       <main>
       <header> Shopping LIst</header>
-      <InputBar />
+      <InputBar addList={this.addList} />
       <List lists={this.state.shoppingList} />
       <button className="resetBtn">Reset</button>
       </main>

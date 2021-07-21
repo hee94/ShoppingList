@@ -4,7 +4,6 @@ import './items.css'
 
 class Items extends Component {
     render() {
-        console.log(this.props.item)
         const {name, count} = this.props.item;
         return (
             <li>
