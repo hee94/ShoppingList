@@ -30,7 +30,15 @@ class App extends Component{
     console.log(shoppingList)
     this.setState({shoppingList})
   }
- 
+  onReset = ()=> {
+    const shoppingList = this.state.shoppingList.map(list => {
+      if(list.count !== 1){
+        return {...list, count :1}
+      }
+      return list
+    });
+    this.setState({shoppingList})
+  }
   render(){
     return(
       <main>
@@ -38,7 +46,7 @@ class App extends Component{
       <InputBar addList={this.addList} />
       <List lists={this.state.shoppingList} handleDelete={this.handleDelete} 
       handleDecrease={this.handleDecrease} />
-      <button className="resetBtn">Reset</button>
+      <button className="resetBtn" onClick={this.onReset}>Reset</button>
       </main>
     )
   }
