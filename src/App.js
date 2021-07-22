@@ -47,8 +47,8 @@ class App extends Component{
       <main>
       <header> Shopping LIst</header>
       <InputBar addList={this.addList} />
-      {this.state.shoppingList && <List lists={this.state.shoppingList} handleDelete={this.handleDelete} 
-      handleDecrease={this.handleDecrease}  handleIncrease={this.handleIncrease} />}
+       <List lists={this.state.shoppingList} handleDelete={this.handleDelete} 
+      handleDecrease={this.handleDecrease}  handleIncrease={this.handleIncrease} />
       <button className="resetBtn" onClick={this.onReset}>Reset</button>
       </main>
     )

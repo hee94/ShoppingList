@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './inputbar.css';
 
-class InputBar extends Component {
+class InputBar extends PureComponent {
     inputRef = React.createRef();
     onAddsubmit =(e)=>{
         e.preventDefault();

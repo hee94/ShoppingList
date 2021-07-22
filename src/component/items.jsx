@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { TiMinus,TiPlus ,TiDelete  } from "react-icons/ti";
 import './items.css'
 
-class Items extends Component {
+class Items extends PureComponent {
     onDelete =(e)=>{
         e.preventDefault();
         this.props.handleDelete(this.props.item.id)
