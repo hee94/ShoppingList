@@ -7,6 +7,10 @@ class Items extends Component {
         e.preventDefault();
         this.props.handleDelete(this.props.item.id)
     }
+    onDecrease=(e)=>{
+        e.preventDefault();
+        this.props.handleDecrease(this.props.item)
+    }
     render() {
         const {name, count} = this.props.item;
         return (
@@ -14,7 +18,7 @@ class Items extends Component {
                 <span className="name">{name}</span>
                 <button className="increaseBtn"><TiPlus /></button>
                 <span className="count">{count}</span>
-                <button className="decreaseBtn"><TiMinus /></button>
+                <button className="decreaseBtn" onClick={this.onDecrease}><TiMinus /></button>
                 <button className="deleteBtn" onClick={this.onDelete}> <TiDelete /></button>
             </li>
         );
