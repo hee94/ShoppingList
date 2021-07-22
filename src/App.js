@@ -6,9 +6,7 @@ import List from './component/list';
 class App extends Component{
   state={
     shoppingList :[
-      {id:1 , name:'우유', count :1 },
-      {id:2 , name:'계란', count :1 },
-      {id:3 , name:'치즈', count :2 },
+      // {id:1,name:'우유',count:1},
     ]
   }
   addList =(name)=>{
@@ -39,22 +37,18 @@ class App extends Component{
     })
     this.setState({shoppingList})
   }
-  onReset = ()=> {
-    const shoppingList = this.state.shoppingList.map(list => {
-      if(list.count !== 1){
-        return {...list, count :1}
-      }
-      return list
-    });
-    this.setState({shoppingList})
+  onReset = (e)=> {
+    e.preventDefault();
+    const shoppingList = [];
+  this.setState({shoppingList})
   }
   render(){
     return(
       <main>
       <header> Shopping LIst</header>
       <InputBar addList={this.addList} />
-      <List lists={this.state.shoppingList} handleDelete={this.handleDelete} 
-      handleDecrease={this.handleDecrease}  handleIncrease={this.handleIncrease} />
+      {this.state.shoppingList && <List lists={this.state.shoppingList} handleDelete={this.handleDelete} 
+      handleDecrease={this.handleDecrease}  handleIncrease={this.handleIncrease} />}
       <button className="resetBtn" onClick={this.onReset}>Reset</button>
       </main>
     )
