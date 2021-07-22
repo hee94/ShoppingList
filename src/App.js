@@ -14,14 +14,17 @@ class App extends Component{
   addList =(name)=>{
     const shoppingList = [...this.state.shoppingList, {id:Date.now(),name,count: 0}];
     this.setState({shoppingList})
-    console.log(name)
+  }
+  handleDelete =(item)=>{
+    const shoppingList = [...this.state.shoppingList.filter(list => list.id !== item)]
+    this.setState({shoppingList})
   }
   render(){
     return(
       <main>
       <header> Shopping LIst</header>
       <InputBar addList={this.addList} />
-      <List lists={this.state.shoppingList} />
+      <List lists={this.state.shoppingList} handleDelete={this.handleDelete} />
       <button className="resetBtn">Reset</button>
       </main>
     )

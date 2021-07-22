@@ -6,11 +6,17 @@ li {
 }
 .name {
   width: 80%;
+  color: #333;
+}
+.count {
+  color: #333;
 }
 .increaseBtn,
-.decreaseBtn {
+.decreaseBtn,
+.deleteBtn {
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+  color: rgb(251, 193, 193);
 }
