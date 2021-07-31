@@ -6,7 +6,7 @@ import List from './component/list';
 class App extends Component{
   state={
     shoppingList :[
-      // {id:1,name:'우유',count:1},
+      {id:1,name:'우유',count:1},
     ]
   }
   addList =(name)=>{
